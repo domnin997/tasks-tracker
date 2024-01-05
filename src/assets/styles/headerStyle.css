@@ -1,0 +1,54 @@
+.app-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bright-orange);
+}
+
+.app-header_wrap {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    gap: 15px;
+    padding: 5px;
+}
+
+.logo__text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo__img {
+    width: 21px;
+    height: 21px;
+}
+
+.auth {
+    display: flex;
+    padding: 5px;
+}
+
+.auth-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 10px;
+}
+
+.auth__icon {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,13 @@
+.standard-btn {
+    height: 40px;
+    width: 140px;
+    background-color: var(--dark-blue);
+    color: var(--dim-white);
+    cursor: pointer;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+}
+
+.standard-btn:hover {
+    color: var(--text-white);
+}

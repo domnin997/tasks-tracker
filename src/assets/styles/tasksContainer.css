@@ -1,0 +1,87 @@
+.tasks-container {
+    width: 100%;
+    position: static;
+    -webkit-box-shadow: 0px 12px 22px 2px rgba(0, 0, 0, 0.10);
+    -moz-box-shadow: 0px 12px 22px 2px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 12px 22px 2px rgba(0, 0, 0, 0.10);
+}
+
+.tasks-container__header-wrap {
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dark-blue);
+}
+
+.tasks-container__h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tasks-list__head {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 5px 15px 5px;
+    font-weight: 600;
+    background-color: var(--bright-orange);
+}
+
+.tasks-list__head-mark {
+    width: 20px;
+}
+
+.tasks-list__head-name {
+    width: 15%;
+}
+
+.tasks-list__head-descr {
+    width: 40%;
+}
+
+.tasks-list__head-deadline, .tasks-list__head-created {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.head-deadline__el-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.deadline-sort-arrow, .created-sort-arrow {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-white);
+    transition-duration: 0.4s;
+}
+
+.tasks-list__head-manage {
+    width: 7%;
+}
+
+.descend {
+    rotate: 180deg;
+}
+
+.active {
+    background-color: var(--dark-blue);
+    color: var(--text-white);
+}

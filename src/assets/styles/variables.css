@@ -1,0 +1,19 @@
+html {
+    --bright-orange: rgb(255, 175, 56);
+    --dark-blue: rgb(56, 53, 157);
+    --dim-white: rgba(229, 229, 229, 0.8);
+    --background-white: rgba(229, 229, 229);
+    --bright-white: rgba(250, 250, 250, 0.851);
+
+    --text-white: rgb(250, 250, 250);
+    --text-black: rgba(30, 30, 30, 0.91);
+
+    --overlay-bg: rgba(128, 128, 128, 0.495);
+
+    --inputs-underline-color: rgba(128, 128, 128, 0.347);
+
+    --task-main-background:rgba(176, 222, 255, 0.862);
+    --task-fulfilled-background: rgba(176, 222, 255, 0.266);
+
+    --sort-btn-background: rgb(121, 121, 121);
+}

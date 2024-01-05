@@ -1,0 +1,15 @@
+@import url(./resetStyles.css);
+@import url(./variables.css);
+
+html {
+    font-family: Roboto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    margin: 0 auto;
+    position: static;
+}

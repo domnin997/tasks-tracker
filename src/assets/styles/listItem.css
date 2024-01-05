@@ -1,0 +1,52 @@
+.task {
+    padding: 5px;
+    min-height: 50px;
+    display: flex;
+    gap: 10px;
+    background-color: var(--task-main-background);
+}
+
+.task__change-icon, .task__del-icon, .task__mark-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task__name-cont {
+    width: 15%;
+}
+
+.task__descr-cont {
+    width: 40%;
+}
+
+.task__descr {
+    overflow: auto;
+    word-break: break-all;
+}
+
+.task__date-created {
+    width: 15%;
+    text-align: center;
+}
+
+.task__deadline-wrap {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fulfilled {
+    text-decoration: line-through;
+    background-color: var(--task-fulfilled-background);
+    color: rgba(0,0,0,0.2);
+}
+
+.task__manage-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 7%;
+}
