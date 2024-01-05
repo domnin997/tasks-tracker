@@ -1,4 +1,4 @@
-import '../assets/styles/addTaskStyle.css';
+import './taskModal.css';
 import {useContext} from "react";
 import {AppContext} from '../store/store.js';
 import {useEffect, useState} from 'react';

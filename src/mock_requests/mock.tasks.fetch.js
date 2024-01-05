@@ -1,6 +1,6 @@
 import {taskService} from '../services/tasks.service.js';
 
-export const fetchTasks = async function (userId, requestType, requestData = false) {
+export const fetchTasks = async function (userId, requestType = 'GET', requestData = false) {
     if (requestType === 'GET') {
       return new Promise (resolve => {
           setTimeout(() => resolve (taskService.getTasks(userId)), 2000);
