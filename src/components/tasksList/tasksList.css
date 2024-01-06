@@ -1,0 +1,18 @@
+.loading-mode {
+  animation: blinkText 1.5s infinite;
+}
+
+@keyframes blinkText {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+  50% {
+    opacity: 0;
+    color: lightblue;
+  }
+  100% {
+    opacity: 1;
+    color: blue;
+  }
+}

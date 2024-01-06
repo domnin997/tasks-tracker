@@ -1,11 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
+import { tasksReducer } from '../components/tasksListItem/tasksSlice.js';
 
 export const store = configureStore({
-  reducers: {
-
+  reducer: {
+    tasksReducer,
   },
-  middleware: getDefaultMiddleware(),
+  // middleware: getDefaultMiddleware(),
   devTools: process.env.NODE_ENV !== 'production',
 })
-
-// export default store;

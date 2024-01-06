@@ -14,11 +14,14 @@ async setTask (userId, newTask) {
   const tasksArray = await localforage.getItem(`${TASKS_PREFIX}${userId}`);
   if (tasksArray) {
     tasksArray.push(newTask);
-    localforage.setItem(`${TASKS_PREFIX}${userId}`, tasksArray);
+    await localforage.setItem(`${TASKS_PREFIX}${userId}`, tasksArray);
+    return true;
   } else {
     const newTasksArray = [newTask];
-    localforage.setItem(`${TASKS_PREFIX}${userId}`, newTasksArray);
+    await localforage.setItem(`${TASKS_PREFIX}${userId}`, newTasksArray);
+    return true;
   }
+  
 }
 
 }

@@ -1,16 +1,17 @@
 import './taskModal.css';
 import {useContext} from "react";
-import {AppContext} from '../store/store.js';
+import {AppContext} from '../../store/store.js';
 import {useEffect, useState} from 'react';
-import LSService from '../services/LSservice.js';
+import {fetchTasks} from '../../mock_requests/mock.tasks.fetch.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { taskAdded } from '../tasksListItem/tasksSlice.js';
+// import LSService from '../services/LSservice.js';
 
-function SetTaskModal (props) {
-    
+function TaskModal (props) {
+    const newDispatch = useDispatch();
     const {task, onClose, amendMode} = props;
-
     const {dispatch} = useContext(AppContext);
-
-    const {setTasks} = LSService();
+    // const {setTasks} = LSService();
 
     let headerText, btnText;
 
@@ -35,7 +36,6 @@ function SetTaskModal (props) {
     }
     
     function handleSubmit (e) {
-        
       if (amendMode) {
         e.preventDefault();
           const updTask = {
@@ -47,10 +47,8 @@ function SetTaskModal (props) {
               createdAt: task.createdAt,
               isDone: task.isDone
             }
-
           dispatch({type: 'EDIT_TASK', updTask});
-          onClose();
-            
+          onClose();  
       } else {
         e.preventDefault();
           const newId = window.crypto.randomUUID();
@@ -64,9 +62,15 @@ function SetTaskModal (props) {
               createdAt: creationDate.getTime(),
               isDone: false
             }
-        dispatch({type: 'ADD_TASK', newTask});
-        setTasks(newTask);
-        }
+        // dispatch({type: 'ADD_TASK', newTask});
+        // setTasks(newTask);
+        fetchTasks(32, 'POST', newTask)
+          .then((response) => {
+            if (response) {
+              newDispatch(taskAdded(newTask));
+            }
+          });
+      }
     }
 
     return (
@@ -133,4 +137,4 @@ function SetTaskModal (props) {
   )
 }
 
-export default SetTaskModal;
+export default TaskModal;

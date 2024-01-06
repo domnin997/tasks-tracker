@@ -8,12 +8,12 @@ const initialState = {
 const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
-  reducer: {
+  reducers: {
     tasksFetching: (state) => {
       state.loadingStatus = 'loading';
     },
     tasksFetched: (state, action) => {
-      state.loadingStatus = 'idle',
+      state.loadingStatus = 'idle';
       state.tasks = action.payload;
     },
     taskAdded: (state, action) => {
@@ -25,7 +25,7 @@ const tasksSlice = createSlice({
   }
 })
 
-export const reducer = tasksSlice.reducer;
+export const tasksReducer = tasksSlice.reducer;
 export const {
   tasksFetching,
   tasksFetched,

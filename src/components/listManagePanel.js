@@ -1,7 +1,7 @@
 import '../assets/styles/listManagePanel.css';
 import { useState } from "react";
-import SetTaskModal from "./setTaskModal";
 import StandardBtn from './standardBtn';
+import TaskModal from './taskModal/taskModal.js';
 
 function ListManagePanel () {
 
@@ -10,7 +10,7 @@ function ListManagePanel () {
   let ModalWindow;
 
   if (taskModalOpen) {
-    ModalWindow = <SetTaskModal task={{name: '', descr: '', deadlineDate: '', deadlineTime: ''}}
+    ModalWindow = <TaskModal task={{name: '', descr: '', deadlineDate: '', deadlineTime: ''}}
                                 onClose={()=>{setTaskModalOpen(false)}} 
                                 amendMode={false}/>
   } else {

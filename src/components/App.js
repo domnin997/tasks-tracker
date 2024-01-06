@@ -4,10 +4,10 @@ import '../assets/styles/App.css';
 import AppHeader from "./appHeader.js";
 import TasksContainer from "./tasksContainer.js";
 import checkDeadlines from "../services/notifications.js";
+import TasksList from "./tasksList/tasksList.js";
 
 const func = checkDeadlines();
 setInterval(func, 10000);
-
 
 function App() {
   
@@ -20,6 +20,7 @@ function App() {
         <main className="main">
           <TasksContainer/>
         </main>
+        <TasksList/>
       </AppContext.Provider>
     </>
   )
