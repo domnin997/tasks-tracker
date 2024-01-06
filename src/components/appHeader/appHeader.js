@@ -1,5 +1,5 @@
-import '../assets/styles/headerStyle.css';
-import pencilLogo from '../assets/img/pencil_logo.png';
+import './appHeader.css';
+import pencilLogo from '../../assets/img/pencil_logo.png';
 
 function AppHeader () {
     return (

@@ -1,6 +1,6 @@
 import '../assets/styles/listManagePanel.css';
 import { useState } from "react";
-import StandardBtn from './standardBtn';
+import StandardBtn from '../components/standardButton/standardButton.js';
 import TaskModal from './taskModal/taskModal.js';
 
 function ListManagePanel () {

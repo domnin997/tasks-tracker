@@ -1,17 +1,12 @@
 import './taskModal.css';
-import {useContext} from "react";
-import {AppContext} from '../../store/store.js';
 import {useEffect, useState} from 'react';
 import {fetchTasks} from '../../mock_requests/mock.tasks.fetch.js';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { taskAdded } from '../tasksListItem/tasksSlice.js';
-// import LSService from '../services/LSservice.js';
 
 function TaskModal (props) {
     const newDispatch = useDispatch();
     const {task, onClose, amendMode} = props;
-    const {dispatch} = useContext(AppContext);
-    // const {setTasks} = LSService();
 
     let headerText, btnText;
 
@@ -47,7 +42,7 @@ function TaskModal (props) {
               createdAt: task.createdAt,
               isDone: task.isDone
             }
-          dispatch({type: 'EDIT_TASK', updTask});
+      // Сюда добавить диспетчер редакса
           onClose();  
       } else {
         e.preventDefault();
@@ -62,8 +57,6 @@ function TaskModal (props) {
               createdAt: creationDate.getTime(),
               isDone: false
             }
-        // dispatch({type: 'ADD_TASK', newTask});
-        // setTasks(newTask);
         fetchTasks(32, 'POST', newTask)
           .then((response) => {
             if (response) {
@@ -73,8 +66,7 @@ function TaskModal (props) {
       }
     }
 
-    return (
-    
+  return ( 
     <div className='modal-overlay'>
       <div className='add-task-cont'>
         <div className='add-task__header-cont'>
