@@ -34,7 +34,7 @@ function TasksList () {
                   isDone={item.isDone}/>
     })
   }
-  const content = loadingStatus === 'idle' ? <>{createList(tasks)}</> : <div className="loading-mode"> Загружаем важное...</div>;
+  const content = loadingStatus === 'idle' ? <>{createList(tasks)}</> : <div className="loading-mode">Загружаем задачи...</div>;
 
   return (
     <div>

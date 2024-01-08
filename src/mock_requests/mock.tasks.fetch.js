@@ -11,7 +11,7 @@ export const fetchTasks = async function (userId, requestType = 'GET', requestDa
       })
     } else if (requestType === 'DELETE') {
       return new Promise (resolve => {
-        setTimeout(() => resolve (taskService.deleteTask(userId, requestData)), 1000);
+        setTimeout(() => resolve (taskService.deleteTask(userId, requestData)), 200);
       })
     }
 }

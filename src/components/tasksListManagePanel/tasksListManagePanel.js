@@ -1,14 +1,11 @@
-import '../assets/styles/listManagePanel.css';
+import './tasksListManagePanel.css';
 import { useState } from "react";
-import StandardBtn from '../components/standardButton/standardButton.js';
-import TaskModal from './taskModal/taskModal.js';
+import StandardBtn from '../standardButton/standardButton.js';
+import TaskModal from '../taskModal/taskModal.js';
 
 function ListManagePanel () {
-
   const [taskModalOpen, setTaskModalOpen] = useState(false);
-
   let ModalWindow;
-
   if (taskModalOpen) {
     ModalWindow = <TaskModal task={{name: '', descr: '', deadlineDate: '', deadlineTime: ''}}
                                 onClose={()=>{setTaskModalOpen(false)}} 

@@ -1,8 +1,9 @@
 import './taskModal.css';
 import {useEffect, useState} from 'react';
+import {createPortal} from 'react-dom';
 import {fetchTasks} from '../../mock_requests/mock.tasks.fetch.js';
-import { useDispatch } from 'react-redux';
-import { taskAdded } from '../tasksListItem/tasksSlice.js';
+import {useDispatch} from 'react-redux';
+import {taskAdded} from '../tasksListItem/tasksSlice.js';
 
 function TaskModal (props) {
     const newDispatch = useDispatch();
@@ -66,8 +67,10 @@ function TaskModal (props) {
       }
     }
 
-  return ( 
-    <div className='modal-overlay'>
+  return (
+    <>
+    {createPortal (
+      <div className='modal-overlay'>
       <div className='add-task-cont'>
         <div className='add-task__header-cont'>
           <h2 className='add-task__header'>{headerText}</h2>
@@ -125,7 +128,10 @@ function TaskModal (props) {
         </div> 
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById('modalPortal')
+    )}
+  </>
   )
 }
 
