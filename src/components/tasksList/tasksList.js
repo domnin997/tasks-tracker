@@ -19,9 +19,8 @@ function TasksList () {
       })
   }, []);
  
-  const loadingStatus = useSelector((state) => state.tasksReducer.loadingStatus);
-  const tasks = useSelector((state) => state.tasksReducer.tasks);
-  console.log(loadingStatus, tasks);
+  const loadingStatus = useSelector((state) => state.tasks.loadingStatus);
+  const tasks = useSelector((state) => state.tasks.tasksList);
 
   function createList (items) {
     return items.map((item) => {
@@ -33,7 +32,6 @@ function TasksList () {
                   deadlineTime={item.deadlineTime}
                   createdAt={item.createdAt}
                   isDone={item.isDone}/>
-      
     })
   }
   const content = loadingStatus === 'idle' ? <>{createList(tasks)}</> : <div className="loading-mode"> Загружаем важное...</div>;

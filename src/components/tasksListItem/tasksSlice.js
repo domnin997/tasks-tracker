@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-  tasks: [],
+  tasksList: [],
   loadingStatus: 'idle',
 }
 
@@ -14,21 +14,23 @@ const tasksSlice = createSlice({
     },
     tasksFetched: (state, action) => {
       state.loadingStatus = 'idle';
-      state.tasks = action.payload;
+      state.tasksList = action.payload;
     },
     taskAdded: (state, action) => {
-      state.tasks.push(action.payload);
+      state.tasksList.push(action.payload);
     },
     taskDeleted: (state, action) => {
-      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+      state.tasksList = state.tasksList.filter((task) => task.id !== action.payload);
     }
   }
 })
 
-export const tasksReducer = tasksSlice.reducer;
+const {reducer, actions} = tasksSlice;
+
+export default reducer;
 export const {
   tasksFetching,
   tasksFetched,
   taskAdded,
   taskDeleted
-} = tasksSlice.actions;
+} = actions;
